@@ -1,0 +1,17 @@
+{
+  "name": "git-bot",
+  "version": "0.0.1",
+  "description": "Bot to get git related help in discord.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["git",
+               "discord",
+               "bot"],
+  "author": "mehedi-shafi",
+  "license": "mit",
+  "repository": {
+    "github": "git@github.com:mehedi-shafi/git-bot.git"
+  }
+}
