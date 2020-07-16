@@ -8,14 +8,27 @@
     "dev": "nodemon -r esm index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["git",
-               "discord",
-               "bot"],
+  "keywords": [
+    "git",
+    "discord",
+    "bot"
+  ],
   "author": "mehedi-shafi",
   "license": "mit",
   "repository": {
     "type": "git",
     "url": "https://github.com/mehedi-shafi/git-bot"
   },
-  "homepage": "https://github.com/mehedi-shafi/git-bot"
+  "homepage": "https://github.com/mehedi-shafi/git-bot",
+  "dependencies": {
+    "discord.js": "^12.2.0",
+    "dotenv": "^8.2.0",
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "pg": "^8.3.0",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
 }
