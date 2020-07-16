@@ -44,7 +44,7 @@ client.on("message", async message => {
 
 client.on('guildMemberAdd', member => {
     // send customized welcome to welcome channel
-    let message = getMessage(member.user.username);
+    let message = getMessage(`<@${member.id}>`);
     console.log(JSON.stringify(client.channels.cache, null, 4));
     let channel = client.channels.cache.find(item => item['name'] == 'welcome');
     channel.send(message);
