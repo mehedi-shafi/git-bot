@@ -1,5 +1,6 @@
 import Discord from 'discord.js';
 import getMessage from './random_welcome';
+import cheatSheet from './cheatsheet';
 
 const client = new Discord.Client();
 
@@ -37,6 +38,10 @@ client.on("message", async message => {
       const sayMessage = args.join(" ");
       message.delete().catch(O_o=>{});
       message.channel.send(sayMessage);
+    }
+
+    if (command === 'cheatsheet'){
+        message.channel.send(cheatSheet);
     }
 
 });
