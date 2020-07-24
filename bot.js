@@ -1,6 +1,5 @@
 import Discord from 'discord.js';
 import getMessage from './random_welcome';
-import cheatSheet from './cheatsheet';
 
 const client = new Discord.Client();
 
@@ -41,7 +40,8 @@ client.on("message", async message => {
     }
 
     if (command === 'cheatsheet'){
-        message.channel.send(cheatSheet);
+        // discord does not allow message longer than 2000 characters.
+        message.channel.send({files: ['cheatsheet.md']});
     }
 
 });
