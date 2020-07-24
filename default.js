@@ -1,6 +1,4 @@
-const { default: random_welcome } = require("./random_welcome");
+# Set your identity.
+git config --global user.name "Rownok"
+git config --global user.email rarownok@example.com
 
-a = ra
-b = rownok
-c = a+b
-document.write("h2"+c+"/h2")
