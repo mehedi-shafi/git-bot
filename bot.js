@@ -76,7 +76,7 @@ client.on("message", async message => {
         }
         var totalmem = ((os.totalmem()) / 1073741824);
         var freemem = ((os.freemem()) / 1073741824);
-        const sayMessage = 'OS: ' + os.type() + '\nVersion: ' + os.version() + '\nUptime: ' + formatedut + '\nTotal Memory: ' + totalmem.toFixed(2) + ' GB' + '\nFree Memory: ' + freemem.toFixed(2) + ' GB';
+        const sayMessage = 'OS: ' + os.type() + '\nUptime: ' + formatedut + '\nTotal Memory: ' + totalmem.toFixed(2) + ' GB' + '\nFree Memory: ' + freemem.toFixed(2) + ' GB';
         message.channel.send(sayMessage);
     }
 
