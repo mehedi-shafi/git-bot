@@ -46,6 +46,7 @@ client.on("message", async message => {
     }
 
     /*
+    //WIP
         if (command === "shout") {
             const sayMessage = args.join(" ");
             if (!sayMessage) {
@@ -59,12 +60,16 @@ client.on("message", async message => {
 
     if (command === "status") {
         const os = require('os');
-        var timestamp = os.uptime();
-        var hours = Math.floor(timestamp / 60 / 60);
-        var minutes = Math.floor(timestamp / 60) - (hours * 60);
-        var seconds = timestamp % 60;
+        var timestamp = process.uptime();
+        var days = Math.floor(Math.floor(timestamp / 60 / 60) / 24);
+        var hours = Math.floor(timestamp / 60 / 60) - (days * 24);
+        var minutes = Math.floor(timestamp / 60) - (hours * 60) - (days * 24 * 60);
+        var seconds = Math.floor(timestamp % 60);
         var formatedut;
-        if (hours) {
+        if (days) {
+            formatedut = days + 'd ' + hours + 'h ' + minutes + 'm ' + seconds + 's';
+        }
+        else if (!days && hours) {
             formatedut = hours + 'h ' + minutes + 'm ' + seconds + 's';
         }
 
@@ -74,8 +79,8 @@ client.on("message", async message => {
         else {
             formatedut = seconds + 's';
         }
-        var totalmem = ((os.totalmem()) / 1073741824);
-        var freemem = ((os.freemem()) / 1073741824);
+        var totalmem = ((os.totalmem()) / (Math.pow(1024, 3)));
+        var freemem = ((os.freemem()) / (Math.pow(1024, 3)));
         const sayMessage = 'OS: ' + os.type() + '\nUptime: ' + formatedut + '\nTotal Memory: ' + totalmem.toFixed(2) + ' GB' + '\nFree Memory: ' + freemem.toFixed(2) + ' GB';
         message.channel.send(sayMessage);
     }
